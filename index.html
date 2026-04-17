@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Genaud Overhof :D</title>
+  <link href="https://fonts.cdnfonts.com/css/aquire" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header role="banner">
+    <nav role="navigation">
+      <button class="hamburger" id="hamburger-btn">☰</button>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Genaud Logo" height="60" />
+      </div>
+      <ul class="nav-right">
+        <li id="toggle-theme">🌓</li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home" onclick="closeMobileMenu()">Over mij</a>
+      <a href="#werk" onclick="closeMobileMenu()">Projecten</a>
+      <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+      <a href="#audiovisueel" onclick="closeMobileMenu()">Audiovisueel</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    </div>
+  </header>
+
+  <section class="intro" id="home">
+    <div class="intro-text">
+      <p>Creative Designer & Visual Explorer</p>
+      <h1>Hey! Ik ben Genaud</h1>
+      <p>Met een oog voor detail en een passie voor betekenisvolle ontwerpen, vertel ik verhalen via beeld, typografie en interactie. Ontdek mijn werk dat merken tot leven brengt, online, op straat en daarbuiten.</p>
+      <button class="btn-primary" onclick="document.querySelector('.portfolio').scrollIntoView({behavior: 'smooth'})">Bekijk mijn werk</button>
+    </div>
+    <div class="intro-img">
+      <img src="assets/Pfp.jpeg" alt="Genaud profile picture" class="profile-pic" />
+    </div>
+  </section>
+
+  <section class="portfolio" id="werk">
+    <h2>Projecten tot dusver</h2>
+    <p>Projecten waarmee ik indruk maak, en oplossingen die gebruikers helpen groeien of ze uitdagen.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" onclick="openModal(1)"><h3>Merkbeeld</h3><img src="assets/mb3.jpg" alt="Merkbeeld"></div>
+      <div class="portfolio-item" onclick="openModal(2)"><h3>Generative Art</h3><img src="assets/genart1.png" alt="Generative Art"></div>
+      <div class="portfolio-item" onclick="openModal(3)"><h3>Coding Workshops</h3><img src="assets/coding1.png" alt="Coding"></div>
+      <div class="portfolio-item" onclick="openModal(4)"><h3>Multimedia Story<h3><img src="assets/narrative1.png" alt="Narrative"></div>
+      <div class="portfolio-item" onclick="openModal(5)"><h3>Beleef de Boeken</h3><img src="assets/bdb1.png" alt="BDB"></div>
+      <div class="portfolio-item" onclick="openModal(6)"><h3>Campagne</h3><img src="assets/camp1.png" alt="Campagne"></div>
+      <div class="portfolio-item" onclick="openModal(7)"><h3>Games</h3><img src="assets/game3.png" alt="Games"></div>
+      <div class="portfolio-item" onclick="openModal(8)"><h3>Eigen projecten</h3><img src="assets/ep1.jpeg" alt="Eigen projecten"></div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>Ik bezit de volgende skills</h2>
+    <div class="tags">
+      <span>Fotografie</span>
+      <span>Audiovisueel design</span>
+      <span>Figma</span>
+      <span>Design</span>
+      <span>UI/UX</span>
+      <span>React</span>
+      <span>Javascript</span>
+      <span>Creatief met pixels</span>
+    </div>
+    <div class="stats">
+      <div>1<br><small>Jaar ervaring</small></div>
+      <div>6<br><small>Tevreden klanten</small></div>
+      <div>+95%<br><small>Rate tevredenheid</small></div>
+      <div class="arrow" onclick="document.querySelector('.love-button').classList.add('visible')">→</div>
+      <button class="love-button">100% made with love</button>
+    </div>
+  </section>
+
+  <section class="video-playlist" id="audiovisueel">
+    <h2>Audiovisueel</h2>
+    <div class="video-container">
+      <div class="custom-video-player">
+        <div class="video-thumbnail" data-index="1" onclick="playVideo(1)">
+          <img src="assets/Vluchten.jpeg" alt="Vluchten" class="thumbnail-image" />
+          <div class="play-overlay"><span class="play-button">▶</span></div>
+        </div>
+        <div id="video-player-1" class="video-frame" style="display:none; padding:56.43% 0 0 0; position:relative;">
+          <iframe src="https://player.vimeo.com/video/1097332982?h=8f95d36dae&badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+        </div>
+        <div id="video-player-2" class="video-frame" style="display:none; padding:56.25% 0 0 0; position:relative;">
+          <iframe src="https://player.vimeo.com/video/1096574365?h=c757a92bf9&badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+        </div>
+        <div id="video-player-3" class="video-frame" style="display:none; padding:56.25% 0 0 0; position:relative;">
+          <iframe src="https://player.vimeo.com/video/1159347083?h=9cfbc26612&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+        </div>
+        <div class="video-controls">
+          <button id="playpause-btn">▶</button>
+          <button id="ff-btn">⏭</button>
+          <button id="next-video-btn">Next</button>
+        </div>
+      </div>
+      <div class="video-buttons">
+        <button class="video-btn" data-index="1">Vluchten</button>
+        <button class="video-btn" data-index="2">Code Hero</button>
+        <button class="video-btn" data-index="3">Compilatie video</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <img src="assets/email.svg" alt="Email" class="contact-icon">
+        <span>gxnaud@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <img src="assets/phone.svg" alt="Phone" class="contact-icon">
+        <span>0615374602</span>
+      </div>
+      <div class="contact-item">
+        <a href="https://www.linkedin.com/in/genaud-overhof-702753396/" target="_blank">
+          <img src="assets/in.svg" alt="LinkedIn" class="contact-icon">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(1)">×</span>
+      <h2>Merkbeeld</h2>
+      <p>Voor mijn specialisatie in fotografie heb ik gekozen voor het onderwerp "Merkbeeld op straat", voornamelijk kijken naar hoe er in Maastricht geadverteert wordt en daar mooie kliekjes uit op maken. Deze sectie is echter aangevuld door belevingsshots en (sport)portretten.</p>
+      <div class="slider">
+        <img src="assets/mb3.jpg" alt="Merkbeeld 3" class="modal-img slide active-slide" />
+        <img src="assets/merkbeeld.png" alt="Merkbeeld 1" class="modal-img slide" />
+        <img src="assets/mb2.png" alt="Merkbeeld 2" class="modal-img slide" />
+        <img src="assets/mb4.png" alt="Merkbeeld 4" class="modal-img slide" />
+        <img src="assets/mb5.png" alt="Merkbeeld 5" class="modal-img slide" />
+        <img src="assets/mb6.jpg" alt="Merkbeeld 6" class="modal-img slide" />
+        <img src="assets/mb7.jpg" alt="Merkbeeld 7" class="modal-img slide" />
+        <img src="assets/mb8.jpg" alt="Merkbeeld 8" class="modal-img slide" />
+        <img src="assets/mb9.jpg" alt="Merkbeeld 9" class="modal-img slide" />
+        <img src="assets/mb10.jpg" alt="Merkbeeld 10" class="modal-img slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(1)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(1)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(2)">×</span>
+      <h2>Generative Art</h2>
+      <p>Voor de Limburgse band "Düüster" hebben wij een tof optreden mogen verzorgen voorzien van generative art, gemaakt met behulp van een arduino. Het nummer "Cupids Blind Eye" wat gaat over een nacht die helemaal uit de hand is gelopen waarnaar Cupido een "blind oog" draait naar mogelijk misbruik heb ik zo creatief mogelijk in beeld proberen te brengen, met als kenmerken ogen, een kleurenpallet die je voornamelijk terugziet in nachtclubs en vervreemde beelden.</p>
+      <div class="slider">
+        <img src="assets/genart1.png" alt="GenArt 1" class="modal-img slide active-slide" />
+        <img src="assets/genart2.png" alt="GenArt 2" class="modal-img slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(2)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(2)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(3)">×</span>
+      <h2>Coding Workshops</h2>
+      <p>Voor het Bernard Lievegoed College te Maastricht hebben wij als team "Coding Workshops" gegeven aan brugklassers, we zijn aan de slag gegaan met p5.js om de brugklassers te leren over kunst en code, hierop hebben wij doorgeborduurd om een fictief bedrijf in elkaar te zetten die deze workshops ook verkoopt. Tijdens dit project heb ik mij bezig gehouden met de video (zie audiovisueel) en meegedacht over de huisstijl. Hieronder meer. </p>
+       <button class="multimedia-btn" onclick="window.open('https://mia-dp-2425.github.io/team12/index.html', '_blank')">Bekijk de website</button>
+      <div class="slider">
+        <img src="assets/coding1.png" alt="Coding 1" class="modal-img slide active-slide" />
+        <img src="assets/coding2.png" alt="Coding 2" class="modal-img slide" />
+        <img src="assets/coding3.png" alt="Coding 3" class="modal-img slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(3)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(3)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal4">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(4)">×</span>
+      <h2>Multimedia story</h2>
+      <p>Voor het CBS te Heerlen hebben wij een multimedia story mogen maken, wij hebben gekozen voor een scrollietelling, een meenemend verhaal door middel van te scrollen door de dag van een vrouw aan de zijde van een mijnwerker.</p>
+       <button class="multimedia-btn" onclick="window.open('https://emilyjacob1.github.io/vrouwachterdemijnbouw/', '_blank')">Klik hier om de Multimedia Story te bekijken</button>
+      <div class="slider">
+        <img src="assets/narrative1.png" alt="Narrative 1" class="modal-img slide active-slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(4)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(4)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal5">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(5)">×</span>
+      <h2>Beleef de Boeken</h2>
+      <p>Voor de universiteitsbibliotheek in Maastricht hebben wij een interactief tastbare setting gemaakt die boeken uit hun "special collections" helemaal tot leven tovert. De stand die wij gemaakt hebben volgde met behulp van signifiers hun eigen route.</p>
+      <div class="slider">
+        <img src="assets/bdb1.png" alt="BDB 1" class="modal-img slide active-slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(5)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(5)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal6">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(6)">×</span>
+      <h2>Campagne</h2>
+      <p>Met het doel om voedselverspilling met als doelgroep families met kinderen hebben we een tof appconcept ontwikkelt genaamd "WasteWise" die met behulp van functies, zowel AI als eigen input, helemaal vorm kon geven aan de kliekjes die families met kinderen nog over hebben in de koelkast.</p>
+      <div class="slider">
+        <img src="assets/camp1.png" alt="Campagne 1" class="modal-img slide active-slide camp-img" />
+        <img src="assets/camp2.png" alt="Campagne 2" class="modal-img slide active-slide camp-img" />
+        <img src="assets/camp3.png" alt="Campagne 3" class="modal-img slide active-slide camp-img" />
+        <img src="assets/camp4.jpg" alt="Campagne 4" class="modal-img slide active-slide camp-img" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(6)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(6)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal7">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(7)">×</span>
+      <h2>Game</h2>
+      <p>Als een beginnersopdracht in game design heb ik een arcadegame ontwikkelt die niet ver streeft van andere games die je hedendaags nog in een speelhal zult vinden genaamd "Rage Cage" en het doel is simpel: zorg dat het blokje de vallende rondjes niet raakt. Simplicity is key.</p>
+      <div class="slider">
+        <img src="assets/game1.png" alt="Game 1" class="modal-img slide active-slide" />
+        <img src="assets/game2.png" alt="Game 2" class="modal-img slide active-slide" />
+        <img src="assets/game3.png" alt="Game 3" class="modal-img slide active-slide" />
+        <img src="assets/game4.png" alt="Game 4" class="modal-img slide active-slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(7)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(7)">→</button>
+    </div>
+  </div>
+
+  <div class="modal" id="modal8">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal(8)">×</span>
+      <h2>Eigen projecten</h2>
+      <p>Buiten school probeer ik dit door te pakken in mijn vrije tijd. Hier een aantal voorbeelden.</p>
+      <div class="slider">
+        <img src="assets/ep1.jpeg" alt="Eigen 1" class="modal-img slide active-slide" />
+        <img src="assets/ep2.jpeg" alt="Eigen 2" class="modal-img slide active-slide" />
+        <img src="assets/ep3.jpeg" alt="Eigen 3" class="modal-img slide active-slide" />
+        <img src="assets/ep4.jpeg" alt="Eigen 4" class="modal-img slide active-slide" />
+        <img src="assets/ep5.jpeg" alt="Eigen 5" class="modal-img slide active-slide" />
+      </div>
+      <button class="slide-btn left" onclick="prevSlide(8)">←</button>
+      <button class="slide-btn right" onclick="nextSlide(8)">→</button>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <p>GENAUD 2025</p>
+  </footer>
+
+  <button class="back-to-top">↑</button>
+  <canvas id="confetti-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2000;"></canvas>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
