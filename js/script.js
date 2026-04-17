@@ -19,8 +19,8 @@ function closeMobileMenu() {
   mobileMenu.classList.remove('active');
 }
 
-// Modal system voor alle 8 modals
-const slideIndexes = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0};
+// Modal system
+const slideIndexes = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0};
 
 function showSlide(modalId, index) {
   const modal = document.getElementById(`modal${modalId}`);
@@ -62,12 +62,15 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Video player met 3 video's
+// Video player - volledig hersteld
 let currentPlayer = null;
 let currentVideoIndex = 1;
 
 function playVideo(index) {
+  // Verberg alle thumbnails en frames
+  document.querySelectorAll('.video-thumbnail').forEach(t => t.style.display = 'none');
   document.querySelectorAll('.video-frame').forEach(f => f.style.display = 'none');
+
   const frame = document.getElementById(`video-player-${index}`);
   if (frame) frame.style.display = 'block';
 
@@ -91,7 +94,10 @@ videoButtons.forEach(button => {
 });
 
 playpauseBtn.addEventListener('click', () => {
-  if (!currentPlayer) { playVideo(1); return; }
+  if (!currentPlayer) {
+    playVideo(1);
+    return;
+  }
   if (playpauseBtn.textContent === '▶') {
     currentPlayer.play();
     playpauseBtn.textContent = '▐▐';
@@ -127,4 +133,4 @@ function triggerSparkleEffect() {
 
 document.querySelector('.love-button').addEventListener('click', triggerSparkleEffect);
 
-console.log("✅ Volledige update: PFP rechts, knoppen in lijn, compilatie video, Merkbeeld met alle 10 foto's en mb3 eerst");
+console.log("✅ Video player volledig hersteld + love button in Aquire font");
