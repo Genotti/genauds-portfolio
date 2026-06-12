@@ -3,6 +3,11 @@
   src: url('../assets/Fonts/Aquire-BW0ox.otf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Exo2-Regular';
+  src: url('../assets/Fonts/Exo2-Regular.ttf') format('truetype');
+}
+
 :root {
   --bg-color: #590016;
   --text-color: #ffffff;
@@ -21,13 +26,18 @@ body.light {
 
 body {
   margin: 0;
-  font-family: 'Aquire', Arial, sans-serif;
+  font-family: 'Exo2-Regular', Arial, sans-serif;   /* Hoofd font voor normale tekst */
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: all 0.3s ease;
   position: relative;
 }
 
+h1, h2, h3 {
+  font-family: 'Aquire', Arial, sans-serif;   /* Titels blijven Aquire */
+}
+
+/* Header */
 header nav {
   display: flex;
   justify-content: space-between;
@@ -270,7 +280,6 @@ header nav {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-family: 'Aquire', Arial, sans-serif;
 }
 
 .contact {
